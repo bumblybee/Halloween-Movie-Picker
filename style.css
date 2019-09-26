@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+    text-align: center;
+}
+
+
+#header {
+    background-image: linear-gradient(to right, rgba(46, 4, 3, 0.8), rgba(94, 70, 3, 0.8)),
+        url("img/cat.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    /* clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); */
+    clip-path: circle(65%);
+    /* animation: header-load 2.9s; */
+}
+
+.title {
+    display: inline-block;
+    font-size: 8rem;
+    font-weight: bold;
+    letter-spacing: 0.6rem;
+    margin-right: 1.4rem;
+    opacity: 0.8;
+}
+
+.title-container {
+    font-family: 'Amatic SC', cursive;
+    margin-bottom: 30px;
+    padding: 25px;
+}
+
+.title-container h2 {
+    color: black;
+    font-family: 'Mansalva', cursive;
+    font-size: 3rem;
+    font-weight: lighter;
+    letter-spacing: 0.5rem;
+    opacity: 0.8;
+    word-spacing: 1rem;
+}
+
+#heading {
+    animation: heading-load 2.5s;
+}
+
+#subtitle {
+    animation: subtitle-load 2.5s;
+}
+
+.movie-container {
+    position: relative;
+}
+
+.play {
+    position: absolute;
+    bottom: 10rem;
+    right: 45%;
+    width: 50px;
+}
+
+/* #movie-button {
+    background-color: #0e0d0d;
+    background-image: linear-gradient(to right, #0a0a0a 0%, #0c0606 51%, #0e0202 90%);
+
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px #270606;
+    color: #7a0916;
+    font-family: 'Mansalva',
+        cursive;
+    font-size: 2.1rem;
+    word-spacing: 0.3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    padding: 10px;
+    height: 60px;
+    width: 240px;
+    animation: button-load 4.9s;
+}
+
+#movie-button:active {
+    box-shadow: 0 2px 2px #130d0d;
+    transform: translateY(5px);
+}
+
+#movie-button:focus {
+    outline: none;
+} */
+
+#movie-info {
+    background: linear-gradient(0deg, rgba(82, 19, 4, 0.7), rgba(51, 10, 4, 0.7)),
+        url("img/pattern.jpg");
+    background-position: bottom left;
+    opacity: 0.55;
+    border-radius: 3px;
+    box-shadow: 0 6px 10px #270606;
+    height: 490px;
+    width: 400px;
+    display: block;
+    margin: 0.8rem auto;
+    position: absolute;
+    left: 37vw;
+    animation: button-load 4.9s;
+}
+
+
+#movie-info.active img {
+    height: 500px;
+    width: 400px;
+}
+
+
+
+
+@keyframes header-load {
+    0% {
+        transform: translateY(-110px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes button-load {
+    0% {
+        transform: translateY(650px) rotate(-90deg) scale(6);
+    }
+
+    50% {
+        transform: translateY(0) scale(1);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes heading-load {
+    0% {
+        transform: translateX(-600px);
+    }
+}
+
+@keyframes subtitle-load {
+    0% {
+        transform: translateX(600px);
+    }
+}
