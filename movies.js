@@ -7,7 +7,17 @@ const countDown = document.querySelector("#countdown");
 window.addEventListener("load", startCountdown);
 
 function startCountdown() {
-    countDown.textContent = " days till halloween";
+    let halloween = new Date("Oct 31, 2019 24:00:00").getTime();
+
+    let setCountdown = setInterval(function () {
+        let today = new Date().getTime();
+        let timeRemaining = halloween - today;
+        var days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        var minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        var hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        countDown.textContent = `${days} days ${hours} hours ${minutes} minutes till Halloween`.toUpperCase();
+    }, 1000);
 }
 
 

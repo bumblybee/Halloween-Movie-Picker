@@ -23,34 +23,32 @@ body {
     background-size: cover;
     height: 100vh;
     position: relative;
-    /* clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%); */
     clip-path: circle(65%);
-    /* animation: header-load 2.9s; */
 }
 
 .title {
+    color: hsl(27, 35%, 36%);
     display: inline-block;
+    font-family: 'Amatic SC',
+        cursive;
     font-size: 8rem;
     font-weight: bold;
-    letter-spacing: 0.6rem;
+    letter-spacing: 1rem;
     margin-right: 1.4rem;
     opacity: 0.8;
 }
 
 .title-container {
-    font-family: 'Amatic SC', cursive;
     margin-bottom: 30px;
     padding: 25px;
 }
 
 .title-container h2 {
-    color: black;
+    color: hsl(27, 35%, 58%);
     font-family: 'Mansalva', cursive;
-    font-size: 3rem;
-    font-weight: lighter;
-    letter-spacing: 0.5rem;
+    font-size: 2rem;
+    letter-spacing: 0.4rem;
     opacity: 0.8;
-    word-spacing: 1rem;
 }
 
 #heading {
