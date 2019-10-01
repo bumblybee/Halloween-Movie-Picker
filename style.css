@@ -10,13 +10,15 @@ html {
 
 body {
     background-color: black;
+    font-family: 'Mansalva',
+        cursive;
     overflow: hidden;
     text-align: center;
 }
 
 
 #header {
-    background-image: linear-gradient(to right, rgba(46, 4, 3, 0.8), rgba(94, 70, 3, 0.8)),
+    background-image: linear-gradient(to right bottom, rgba(78, 35, 7, 0.8), rgba(82, 69, 12, 0.8)),
         url("img/cat.jpg");
     background-position: center;
     background-repeat: no-repeat;
@@ -27,13 +29,13 @@ body {
 }
 
 .title {
-    color: hsl(27, 35%, 36%);
+    color: hsl(27, 36%, 35%);
     display: inline-block;
     font-family: 'Amatic SC',
         cursive;
-    font-size: 8rem;
+    font-size: 8.5rem;
     font-weight: bold;
-    letter-spacing: 1rem;
+    letter-spacing: 0.9rem;
     margin-right: 1.4rem;
     opacity: 0.8;
 }
@@ -43,12 +45,14 @@ body {
     padding: 25px;
 }
 
+/* TODO: add transform/transition to h2, or better  yet make a visually appealing clock coutdown*/
 .title-container h2 {
-    color: hsl(27, 35%, 58%);
-    font-family: 'Mansalva', cursive;
+    color: hsl(27, 37%, 54%);
+
     font-size: 2rem;
     letter-spacing: 0.4rem;
     opacity: 0.8;
+    animation: counter-load 3.2s linear;
 }
 
 #heading {
@@ -63,65 +67,55 @@ body {
     position: relative;
 }
 
-.play {
-    position: absolute;
-    bottom: 10rem;
-    right: 45%;
-    width: 50px;
-}
 
-/* #movie-button {
-    background-color: #0e0d0d;
-    background-image: linear-gradient(to right, #0a0a0a 0%, #0c0606 51%, #0e0202 90%);
 
-    border: none;
-    border-radius: 4px;
-    box-shadow: 0 4px 10px #270606;
-    color: #7a0916;
-    font-family: 'Mansalva',
-        cursive;
-    font-size: 2.1rem;
-    word-spacing: 0.3rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    padding: 10px;
-    height: 60px;
-    width: 240px;
-    animation: button-load 4.9s;
-}
 
-#movie-button:active {
-    box-shadow: 0 2px 2px #130d0d;
-    transform: translateY(5px);
-}
-
-#movie-button:focus {
-    outline: none;
-} */
-
+/* TODO: figure out a better way to reveal images*/
 #movie-info {
-    background: linear-gradient(0deg, rgba(82, 19, 4, 0.7), rgba(51, 10, 4, 0.7)),
-        url("img/pattern.jpg");
+    background: rgba(63, 31, 6, 0.99);
     background-position: bottom left;
-    opacity: 0.55;
-    border-radius: 3px;
-    box-shadow: 0 6px 10px #270606;
+    /* opacity: 0.95; */
+    backface-visibility: hidden;
+    border-radius: 2px;
+    box-shadow: inset 0 0 12px rgba(31, 8, 2, 0.99);
     height: 490px;
     width: 400px;
     display: block;
     margin: 0.8rem auto;
     position: absolute;
     left: 37vw;
+    transition: all 1s;
     animation: button-load 4.9s;
 }
 
+#movie-info.active {
+    padding: 5px;
 
-#movie-info.active img {
-    height: 500px;
-    width: 400px;
 }
 
+#movie-info.active img {
+    height: 480px;
+    width: 390px;
+    animation: scale-image .5s linear;
+}
 
+#movie-link {
+    margin: auto;
+    font-size: 2rem;
+    text-align: center;
+    padding: 8px 0;
+    height: 10rem;
+    position: absolute;
+    z-index: 4;
+    right: 47%;
+    top: 49.5rem;
+
+}
+
+#movie-link a {
+    color: hsl(27, 37%, 50%);
+    text-decoration: none;
+}
 
 
 @keyframes header-load {
@@ -157,5 +151,33 @@ body {
 @keyframes subtitle-load {
     0% {
         transform: translateX(600px);
+    }
+}
+
+@keyframes counter-load {
+    0% {
+        opacity: 0;
+    }
+
+    /* 50% {
+        opacity: 0.3
+    } */
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale-image {
+    0% {
+        transform: scale(0, 0);
+    }
+
+    50% {
+        transform: scale(0.5, 0.5);
+    }
+
+    100% {
+        transform: scale(1);
     }
 }
